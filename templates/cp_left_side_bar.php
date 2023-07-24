@@ -9,18 +9,18 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
         <div class="profile_pic">
-            <img src="<?= $base_url ?>assets/images/img.jpg" alt="profile image" class="img-circle profile_img">
+            <img src="<?= $base_url ?>assets/backend/images/img.jpg" alt="profile image" class="img-circle profile_img">
         </div>
         <div class="profile_info">
             <span>Welcome,</span>
             <h2 class="text-capitalize">
-                <?php 
+                <?php
                     if (isset($_COOKIE["user_name"])) {
                         echo $_COOKIE["user_name"];
-                    } else if (isset($_SESSION["user_name"])) {
+                    } elseif (isset($_SESSION["user_name"])) {
                         echo $_SESSION["user_name"];
                     }
-                ?>
+        ?>
             </h2>
         </div>
         </div>

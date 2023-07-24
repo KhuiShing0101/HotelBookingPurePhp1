@@ -8,11 +8,11 @@
             <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle text-capitalize" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        <img src="<?= $base_url ?>assets/images/img.jpg" alt="">
-                        <?php 
+                        <img src="<?= $base_url ?>assets/backend/images/img.jpg" alt="">
+                        <?php
                             if (isset($_COOKIE["user_name"])) {
                                 echo $_COOKIE["user_name"];
-                            } else if (isset($_SESSION["user_name"])) {
+                            } elseif (isset($_SESSION["user_name"])) {
                                 echo $_SESSION["user_name"];
                             }
                         ?>

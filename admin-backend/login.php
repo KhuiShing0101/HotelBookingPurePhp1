@@ -1,42 +1,76 @@
 <?php
+session_start();
 require('../requires/common.php');
 require('../requires/connect.php');
+require("../requires/check_auth.php");
 $title = "Hotel Booking:Admin Login";
 
 $userName = "";
 $remember = 0;
 
 if (isset($_POST["form-sub"]) && $_POST["form-sub"] == "1") {
-  $userName     = $mysqli->real_escape_string($_POST['username']);
-  $password     = $mysqli->real_escape_string($_POST['password']);
-  $remember     = (isset($_POST['remember'])) ? $_POST['remember'] : 0;
-  $encrypt_pss  = md5(md5($password) . $config['key']);
-  if ($remember == 0) {
-    $sql          = "SELECT * FROM `users` WHERE name = '$userName' OR email = '$userName'";
-    $result       = $mysqli->query($sql);
-    $res_rows      = $result->num_rows;
-    if ($res_rows >= 1) {
-      while($row = $result->fetch_assoc()) {
-        $user_id      = (int)($row['id']);
-        $user_name    = htmlspecialchars($row['name']);
-        $user_email   = htmlspecialchars($row['email']);
-        $db_password  = $row['password'];
-        if ($db_password == $encrypt_pss) {
-          $_SESSION['id']        = $user_id;
-          $_SESSION['username']  = $user_name;
-          $_SESSION['email']     = $user_email;
-          $url  = $base_url . "index.php";
-          header("Refresh:0; url = $url");
-          exit();
+    $userName     = $mysqli->real_escape_string($_POST['username']);
+    $password     = $mysqli->real_escape_string($_POST['password']);
+    $remember     = (isset($_POST['remember']) && $_POST['remember'] == 1) ? 1 : 0;
+    $encrypt_pss  = md5(md5($password) . $config['key']);
+    if ($remember == 0) {
+        $sql          = "SELECT * FROM `users` WHERE name = '$userName' OR email = '$userName'";
+        $result       = $mysqli->query($sql);
+        $res_rows      = $result->num_rows;
+        if ($res_rows >= 1) {
+            while($row = $result->fetch_assoc()) {
+                $user_id      = (int)($row['id']);
+                $user_name    = htmlspecialchars($row['name']);
+                $user_email   = htmlspecialchars($row['email']);
+                $db_password  = $row['password'];
+                if ($db_password == $encrypt_pss) {
+                    $_SESSION['id']        = $user_id;
+                    $_SESSION['username']  = $user_name;
+                    $_SESSION['email']     = $user_email;
+                    $url  = $cp_base_url . "index.php";
+                    header("Refresh:0; url = $url");
+                    exit();
+                } else {
+                    echo "Wrong Password";
+                }
+            }
         } else {
-          echo "Wrong Password";
+            echo "Wrong User Name";
         }
-      }
+    } else {
+        $sql          = "SELECT * FROM `users` WHERE name = '$userName' OR email = '$userName'";
+        $result       = $mysqli->query($sql);
+        $res_rows      = $result->num_rows;
+        if ($res_rows >= 1) {
+            while($row = $result->fetch_assoc()) {
+                $user_id      = (int)($row['id']);
+                $user_name    = htmlspecialchars($row['name']);
+                $user_email   = htmlspecialchars($row['email']);
+                $db_password  = $row['password'];
+                if ($db_password == $encrypt_pss) {
+                    $cookie_id = "username";
+                    $cookie_value= $user_name;
+                    setcookie($cookie_id, $cookie_value, time() + (86400 * 30), "/");
+
+                    $cookie_email = "username";
+                    $cookie_value= $user_name;
+                    setcookie($cookie_email, $cookie_value, time() + (86400 * 30), "/");
+
+                    $cookie_name = "username";
+                    $cookie_value= $user_name;
+                    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+                    $url  = $cp_base_url . "index.php";
+                    header("Refresh:0; url = $url");
+                    exit();
+                } else {
+                    echo "Wrong Password";
+                }
+            }
+        } else {
+            echo "Wrong User Name";
+        }
     }
-    else {
-      echo "Wrong User Name";
-    }
-  }
 }
 ?>
 
@@ -82,7 +116,9 @@ if (isset($_POST["form-sub"]) && $_POST["form-sub"] == "1") {
             </div>
 
             <div class="my-3 d-flex ml-4 justify-content-start">
-              <input type="checkbox" name="remember" value="1" <?php if ($remember == 1) {echo "checked";} ?>>
+              <input type="checkbox" name="remember" value="1" <?php if ($remember == 1) {
+                  echo "checked";
+              } ?>>
               <label for="remember" class="form-check-label">Remember me</label>
             </div>
 
