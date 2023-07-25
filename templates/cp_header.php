@@ -35,15 +35,12 @@
     <script src="<?= $base_url ?>assets/backend/bootstrapjs/bootstrap.bundle.min.js"></script>
     <!-- fast click -->
     <script src="<?= $base_url ?>assets/backend/js/fastclick/lib/fastclick.js"></script>
-    <!-- PNotify -->
-    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.js"></script>
-    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.buttons.js"></script>
-    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.nonblock.js"></script>
     <!-- iCheck -->
     <script src="<?= $base_url ?>assets/backend/js/iCheck/icheck.min.js"></script>
     <!-- validator -->
     <script src="<?= $base_url ?>assets/backend/js/validator/multifield.js"></script> 
     <script src="<?= $base_url ?>assets/backend/js/validator/validator.js"></script> 
+    
   </head>
 
   <body class="nav-md">

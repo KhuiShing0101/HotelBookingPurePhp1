@@ -10,5 +10,20 @@
     </div>
     <!-- Custom Theme Scripts -->
     <script src="<?= $base_url ?>assets/backend/js/custom.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/validator/custom.js"></script>
+
+    <script>
+
+        <?php if ($error == true) : ?>
+          $(document).ready(function () {
+            new PNotify({
+              title   : 'Oh No!',
+              text    : '<?= $error_message ?>',
+              type    : 'error',
+              styling : 'bootstrap3'
+            });
+          })
+        <?php endif ?>
+
+      </script>
   </body>
-</html>

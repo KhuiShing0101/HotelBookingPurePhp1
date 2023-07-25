@@ -95,6 +95,10 @@ if (isset($_POST["form-sub"]) && $_POST["form-sub"] == "1") {
   <link href="<?php echo $base_url ?>assets/backend/animate/animate.min.css" rel="stylesheet">
   <!-- Custom Theme Style -->
   <link href="<?php echo $base_url ?>assets/backend/css/custom.min.css" rel="stylesheet">
+  <!-- pnotify.css -->
+  <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.css" rel="stylesheet">
+  <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.buttons.css" rel="stylesheet">
+  <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.nonblock.css" rel="stylesheet">
 </head>
 
 <body class="login">
@@ -139,5 +143,20 @@ if (isset($_POST["form-sub"]) && $_POST["form-sub"] == "1") {
   </div>
   </div>
 </body>
-
+      <!-- PNotify -->
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.nonblock.js"></script>
+  <script>
+        <?php if ($error == true) : ?>
+          $(document).ready(function () {
+            new PNotify({
+              title   : 'Oh No!',
+              text    : '<?= $error_message ?>',
+              type    : 'error',
+              styling : 'bootstrap3'
+            });
+          })
+        <?php endif ?>
+      </script>
 </html>

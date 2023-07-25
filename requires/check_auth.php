@@ -31,5 +31,10 @@ if(isset($_COOKIE['id']) && isset($_COOKIE['username']) && isset($_COOKIE['email
             header("Refresh:0; url = $url");
             exit();
         }
+        if($checkAuth == false) {
+            $url  = $cp_base_url . "login.php";
+            header("Refresh:0; url = $url");
+            exit();
+        }
     }
 }
