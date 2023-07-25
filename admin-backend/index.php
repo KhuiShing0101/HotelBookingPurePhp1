@@ -1,11 +1,12 @@
-<?php 
-
-
-
-
-
+<?php
+require("../requires/connect.php");
+require("../requires/common.php");
+require("../requires/check_auth.php");
+$header_title = "Hotel Booking::Admin Dashboard";
+require("../templates/cp_header.php");
+require("../templates/cp_top_nav_bar.php");
+require("../templates/cp_left_side_bar.php");
 ?>
-
 
   <!-- page content -->
   <div class="right_col" role="main">
@@ -45,3 +46,6 @@
     <!-- /top tiles -->
     </div>
     <!-- /page content -->
+<?php
+    require("../templates/cp_footer.php");
+?>

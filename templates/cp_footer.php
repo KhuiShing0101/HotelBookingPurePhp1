@@ -9,6 +9,6 @@
       </div>
     </div>
     <!-- Custom Theme Scripts -->
-    <script src="<?= $base_url ?>assets/js/custom.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/custom.js"></script>
   </body>
 </html>

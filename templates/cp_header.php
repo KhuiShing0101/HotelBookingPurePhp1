@@ -6,26 +6,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="icon" href="<?= $base_url ?>assets/images/logo.jpg" type="image/ico" />
+  	<link rel="icon" href="<?= $base_url ?>assets/backend/images/logo.jpg" type="image/ico" />
 
     <title><?= $header_title ?></title>
 
     <!-- Bootstrap -->
     <link href="<?= $base_url ?>assets/backend/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?= $base_url ?>assets/backend/css//font-awesome.min.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/fonts/font-awesome.min.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="<?= $base_url ?>assets/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/iCheck/green.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="<?= $base_url ?>assets/css/custom.min.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/custom.min.css" rel="stylesheet">
     <!-- Default CSS -->
-    <link href="<?= $base_url ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/style.css" rel="stylesheet">
     <!-- Ngprogress -->
-    <link href="<?= $base_url ?>assets/css/nprogress.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/nprogress/nprogress.css" rel="stylesheet">
     <!-- PNotify -->
-    <link href="<?= $base_url ?>assets/pnotify/dist/pnotify.css" rel="stylesheet">
-    <link href="<?= $base_url ?>assets/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
-    <link href="<?= $base_url ?>assets/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.buttons.css" rel="stylesheet">
+    <link href="<?= $base_url ?>assets/backend/css/pnotify/pnotify.nonblock.css" rel="stylesheet">
 
     <!-- JavaScript -->
 
@@ -36,14 +36,14 @@
     <!-- fast click -->
     <script src="<?= $base_url ?>assets/backend/js/fastclick/lib/fastclick.js"></script>
     <!-- PNotify -->
-    <script src="<?= $base_url ?>assets/pnotify/dist/pnotify.js"></script>
-    <script src="<?= $base_url ?>assets/pnotify/dist/pnotify.buttons.js"></script>
-    <script src="<?= $base_url ?>assets/pnotify/dist/pnotify.nonblock.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/pnotify/dist/pnotify.nonblock.js"></script>
     <!-- iCheck -->
-    <script src="<?= $base_url ?>assets/iCheck/icheck.min.js"></script>
+    <script src="<?= $base_url ?>assets/backend/js/iCheck/icheck.min.js"></script>
     <!-- validator -->
-    <script src="<?= $base_url ?>assets/validator/multifield.js"></script> 
-    <script src="<?= $base_url ?>assets/validator/validator.js"></script> 
+    <script src="<?= $base_url ?>assets/backend/js/validator/multifield.js"></script> 
+    <script src="<?= $base_url ?>assets/backend/js/validator/validator.js"></script> 
   </head>
 
   <body class="nav-md">
